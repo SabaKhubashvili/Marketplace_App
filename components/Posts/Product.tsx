@@ -28,6 +28,7 @@ export const Product = ({
 
     
     const {data} = useSession()
+    
     const [likesLength,setLikesLength] = useState<number>(productLikes.length)
     const [hasMounted,setHasMounted] = useState<boolean>(false)
     const [showComments,setShowComments] = useState<boolean>(false)
