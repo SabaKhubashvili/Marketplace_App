@@ -77,7 +77,7 @@ export const Navbar = ({menu,setMenu}:Props) => {
 
     useEffect(()=>{
         setHasMounted(true)
-    })
+    },[])
 
 
   return (

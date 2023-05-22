@@ -6,7 +6,7 @@ import { Menu } from '@/components/Navbar/Menu/Menu'
 import { TrendingList } from '@/components/Treding/TrendingList'
 import useMediaQuery from '@/hooks/UseMediaQuery'
 
-const index = () => {
+const Index = () => {
     const isAboveSemiLargeScreens = useMediaQuery('(min-width:1280px)')
     return (
     <React.Fragment>
@@ -37,4 +37,4 @@ const index = () => {
   )
 }
 
-export default index
+export default Index

@@ -42,7 +42,7 @@ export const Product = ({
     
     useEffect(()=>{
         setHasMounted(true)
-    })
+    },[])
     useEffect(() => {
         const host = window.location.href;
         const baseUrl = `${host}`;

@@ -129,7 +129,7 @@ export const FeedCreatePost = ({isAboveSmallScreens,setShowFilteredPosts,showFil
             
             useEffect(()=>{
                 setHasMounted(true)
-            })
+            },[])
             return (
     <div className={`flex flex-col gap-[7px] ${isLoading && 'opacity-75'} transition-all duration-300 `}>
     <div className=' bg-gradient-to-r dark:from-[#292929] dark:to-[#252525] bg-white

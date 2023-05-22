@@ -53,7 +53,7 @@ export const Menu = () => {
     const isAboveSemiLargeScreens = useMediaQuery('(min-width:1400px)')
     useEffect(()=>{
         setHasMounted(true)
-    })
+    },[])
 
 
     const handleSearch = (e:React.FormEvent<HTMLFormElement>) =>{

@@ -24,7 +24,7 @@ export const FriendComponent = ({id,name,image,isVerified,followers}:Props) => {
       let isFollowing = followers.some(follower=>follower.followerId === data?.user.id)
       setIsFollowing(isFollowing)
     }
-  },[])
+  },[data])
  
 
   const onFollow = () =>{

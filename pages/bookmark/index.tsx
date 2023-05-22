@@ -7,7 +7,7 @@ import { LoadingIcon } from '@/public/Svg/Icons/LoadingIcon'
 import { ProductInterface } from '@/types'
 import { Product } from '@/components/Posts/Product'
 
-const index = () => {
+const Index = () => {
 
   const {
     data:Products,
@@ -15,6 +15,7 @@ const index = () => {
   } = getBookmarks()
   
   const {data:userData} = useSession()
+
   if(isLoading){
     return <LoadingIcon/>
   }
@@ -60,4 +61,4 @@ const index = () => {
 
 }
 
-export default index
+export default Index

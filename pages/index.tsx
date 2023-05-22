@@ -30,7 +30,7 @@ export default function Home() {
 
     useEffect(()=>{
       setHasMounted(true)
-  })
+  },[])
   
 
   const params = router.query

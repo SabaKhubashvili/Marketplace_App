@@ -68,7 +68,7 @@ export const LoginModal = () => {
     )
     let footerContent = (
         <div className='w-full dark:text-white text-secondary'>
-            Dont't have accaunt? <span className='cursor-pointer' onClick={handleChange}>Click Here</span>
+            Don&apos;t have accaunt? <span className='cursor-pointer' onClick={handleChange}>Click Here</span>
         </div>
     )
   return (

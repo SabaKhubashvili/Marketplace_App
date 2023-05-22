@@ -8,7 +8,7 @@ import { TrendingList } from '@/components/Treding/TrendingList'
 import { SmallBanner } from '@/components/Banners/SmallBanner'
 import { useRouter } from 'next/router'
 
-const index = () => {
+const Index = () => {
     const isAboveSemiLargeScreens = useMediaQuery('(min-width:1280px)')
 
 
@@ -39,4 +39,4 @@ const index = () => {
   )
 }
 
-export default index
+export default Index
