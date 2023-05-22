@@ -29,7 +29,7 @@ const Index = () => {
             <meta property='og:title' content='Products with Bookmark' />
             <meta property='og:description' content='Save products for later' />
           </Head>
-          <main className='w-full h-full flex flex-col justify-start md:px-[23px] px-[10px] pt-[44px] gap-[55px] '>
+          <main className='w-full h-full flex flex-col justify-start md:px-[23px] px-[10px] pt-[114px] gap-[55px] '>
           <h1 className='text-[32px]  font-semibold text-[#2A2A2A] dark:text-[#FFF]'>Bookmarks</h1>
 
             <div className='h-full overflow-y-scroll flex flex-col gap-[20px]'>

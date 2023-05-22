@@ -3,7 +3,7 @@ import React from 'react'
 
 export const Contact = () => {
   return (
-    <div className='flex gap-[40px]  flex-col'>
+    <div className='flex gap-[40px]  flex-col lg:px-0 px-[40px]'>
             <div className='flex gap-[20px] flex-col'>
                 <h3 className='text-[28px] font-medium w-[17rem]'>
                     Adress & Personal Information

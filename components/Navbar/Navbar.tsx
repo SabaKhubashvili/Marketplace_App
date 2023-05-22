@@ -86,8 +86,8 @@ export const Navbar = ({menu,setMenu}:Props) => {
       <motion.nav 
       className={`${menu ? 'xl:col-span-2 lg:col-span-3' : 'xl:col-span-1 lg:col-span-2  '} 
       lg:pt-[38px] flex lg:static fixed   lg:flex-col items-center lg:justify-normal justify-between z-[89]    
-      lg:gap-[118px] dark:bg-[#212121]
-      lg:h-screen lg:min-h-[80%] lg:col-start-auto col-start-1 h-fit w-full col-span-12 lg:px-0 sm:px-[23px] px-[10px]`} >
+      lg:gap-[118px] dark:bg-[#212121]  
+      lg:h-full lg:min-h-[100vh] lg:col-start-auto col-start-1   w-full col-span-12 lg:px-0 sm:px-[23px] px-[10px]`} >
         
         {
           !isAboveSemiLargeScreens && hasMounted &&
@@ -110,7 +110,7 @@ export const Navbar = ({menu,setMenu}:Props) => {
             :
             <img src={'/images/main/logo_full_light.png'} alt="Logo_Full" className="  md:min-w-[8rem] w-[75px]  min-h-full" draggable={false} />
             :
-            <Image src={'/images/main/logo_shorted.png'}  alt="Logo_Shorted" width={50} height={50} className=" md:min-w-[2.5rem]  min-h-full"  draggable={false} />
+            <img src={'/images/main/logo_shorted.png'}  alt="Logo_Shorted" className=" md:min-w-[2.5rem]  min-h-full"  draggable={false} />
           }
         </Link>
         { isAboveSemiLargeScreens ?
