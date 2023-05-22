@@ -1,0 +1,162 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id             String  @id @default(cuid())
+  name           String
+  email          String  @unique
+  hashedPassword String
+  image          String?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  canPostProduct Boolean @default(false)
+  isVerified     Boolean @default(false)
+
+  posts        Post[]
+  Likes        Likes[]
+  Product      Product[]
+  productLikes productLikes[]
+  Comments     Comments[]
+  PostComments PostComments[]
+
+  Follower  Follow[] @relation("follower")
+  Following Follow[] @relation("following")
+
+  Bookmarks Bookmark[]
+}
+
+model Post {
+  id          String  @id @default(cuid())
+  title       String?
+  description String?
+  image       String?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  userId    String
+  publisher User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  Likes        Likes[]
+  PostComments PostComments[]
+}
+
+model Product {
+  id          String  @id @default(cuid())
+  title       String
+  description String
+  image       String
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  userId    String
+  publisher User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  productLikes productLikes[]
+  comments     Comments[]
+  tags         ProductTags[]
+  bookmarkedBy Bookmark[]
+}
+
+model productLikes {
+  id String @id @default(uuid())
+
+  userId    String
+  user      User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  productId String
+  product   Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+}
+
+model Likes {
+  id     String @id @default(cuid())
+  userId String
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  postId String
+  post   Post   @relation(fields: [postId], references: [id], onDelete: Cascade)
+}
+
+model Comments {
+  id String @id @default(cuid())
+
+  comment String
+
+  productId String
+  product   Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+
+  userId String
+  author User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model PostComments {
+  id String @id @default(cuid())
+
+  comment String
+
+  postId String
+  post   Post   @relation(fields: [postId], references: [id], onDelete: Cascade)
+
+  userId String
+  author User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model ProductTags {
+  id String @id @default(cuid())
+
+  productId String
+  product   Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+
+  tagId String
+  tag   Tag    @relation(fields: [tagId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Tag {
+  id String @id @default(cuid())
+
+  name String
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  ProductTags ProductTags[]
+}
+
+model Follow {
+  id String @id @default(cuid())
+
+  followerId String
+  following  User   @relation(fields: [followerId], references: [id], onDelete: Cascade, name: "following")
+
+  followingId String
+  follower    User   @relation(fields: [followingId], references: [id], onDelete: Cascade, name: "follower")
+}
+
+model Bookmark {
+  id String @id @default(cuid())
+
+  userId String
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  productId String
+  product   Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
