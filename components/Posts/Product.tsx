@@ -82,7 +82,6 @@ export const Product = ({
                     setIsBookmarked(true)
                     toast.success(res.data.message)
                 }).catch(error=>{
-                    console.log(error)
                     toast.success(error.response.data.message)
                 }).finally(()=>{
                     setTimeout(()=>setIsRequestPending(false),300)
@@ -98,7 +97,6 @@ export const Product = ({
                     setIsBookmarked(false)
                     toast.success(res.data.message)
                 }).catch(error=>{
-                    console.log(error)
                     toast.success(error.response.data.message)
                 }).finally(()=>{
                     setTimeout(()=>setIsRequestPending(false),300)
@@ -140,7 +138,7 @@ export const Product = ({
           await navigator.clipboard.writeText(`${ogUrl}product/${id}`);
           toast.success('Link Copied')
         } catch (error) {
-          console.error('Failed to copy link');
+          toast.error('Failed to copy link')
         }
       };
     

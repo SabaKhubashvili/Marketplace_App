@@ -36,9 +36,9 @@ async function main() {
           });
         }
     
-        console.log('Tag seeder completed successfully.');
+        
       } catch (error) {
-        console.error('Error seeding tags:', error);
+        
       }
   
 }

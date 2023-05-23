@@ -6,6 +6,7 @@ import { FieldValues, SubmitHandler, useForm } from 'react-hook-form'
 import { MainButton } from '../Buttons/MainButton'
 import axios from 'axios'
 import { CommentsInterface } from '@/types'
+import { toast } from 'react-hot-toast'
 
 interface Props{
     productId:string
@@ -36,11 +37,10 @@ export const CommentsSection = ({showComments,productId,Comments,isFeed,isBig}:P
         setIsLoading(true)
         axios.post(`api/${isFeed ? 'post/createComment' : 'product/createComment'}`,{...data,id:productId})
             .then(res=>{
-                console.log(res)
                 Comments.unshift(res.data.comment)
                 reset()
             }).catch(error=>{
-                console.log(error)           
+                toast.error(error.response.data.message)      
             }).finally(()=>{
                 setIsLoading(false)
             })

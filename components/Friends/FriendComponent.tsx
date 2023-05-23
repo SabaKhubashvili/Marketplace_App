@@ -35,7 +35,6 @@ export const FriendComponent = ({id,name,image,isVerified,followers}:Props) => {
       .then(res=>{
         setIsFollowing(true)         
       }).catch(error=>{
-        console.log(error)
         setIsFollowing(false)          
       }).finally(()=>{
         setTimeout(()=>setIsRequestPending(false),300)
@@ -49,7 +48,6 @@ export const FriendComponent = ({id,name,image,isVerified,followers}:Props) => {
         .then(res=>{
           setIsFollowing(false)        
         }).catch(error=>{
-          console.log(error)
           setIsFollowing(true)          
         }).finally(()=>{
           setTimeout(()=>setIsRequestPending(false),300)
