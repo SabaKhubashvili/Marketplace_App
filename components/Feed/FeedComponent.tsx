@@ -10,6 +10,7 @@ import axios from 'axios'
 import {motion} from 'framer-motion'
 import { useRouter } from 'next/router'
 import { CommentsSection } from '../Comments/Comments'
+import useMediaQuery from '@/hooks/UseMediaQuery'
 
 export const FeedComponent = ({
     id,
@@ -33,6 +34,7 @@ export const FeedComponent = ({
     const [isRequestPending, setIsRequestPending] = useState<boolean>(false);
     const [isPostLiked,setIsLiked] = useState<boolean>()
     const [showComments,setShowComments] = useState<boolean>(false)
+    const isAboveSemiLargeScreens = useMediaQuery('(min-width:1024px)')
     
 
    
@@ -189,7 +191,7 @@ export const FeedComponent = ({
                     <Dots/>
                 </div>
 
-                <AnimateDropdown isTop isRight isOpen={dropdown} body={dropdownBody}/>
+                <AnimateDropdown isTop={!isAboveSemiLargeScreens} isRight={!isAboveSemiLargeScreens} isOpen={dropdown} body={dropdownBody}/>
             </div>
         </div>
         <CommentsSection showComments={showComments} productId={id} Comments={PostComments} isFeed />
