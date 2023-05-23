@@ -106,11 +106,11 @@ export const Navbar = ({menu,setMenu}:Props) => {
             menu || !isAboveSemiLargeScreens && hasMounted ? 
             theme === 'dark' 
             ?
-            <img src={'/images/main/logo_full.png'} alt="Logo_Full" className="  md:min-w-[8rem] w-[75px]  min-h-full" draggable={false} />
+            <Image src={'/Images/main/logo_full.png'} alt="Logo_Full" width={100} height={100} className="  md:min-w-[8rem] w-[75px]  min-h-full" draggable={false} />
             :
-            <img src={'/images/main/logo_full_light.png'} alt="Logo_Full" className="  md:min-w-[8rem] w-[75px]  min-h-full" draggable={false} />
+            <Image src={'/Images/main/logo_full_light.png'} alt="Logo_Full" width={100} height={100} className="  md:min-w-[8rem] w-[75px]  min-h-full" draggable={false} />
             :
-            <img src={'/images/main/logo_shorted.png'}  alt="Logo_Shorted" className=" md:min-w-[2.5rem]  min-h-full"  draggable={false} />
+            <Image src={'/Images/main/logo_shorted.png'}  alt="Logo_Shorted" width={100} height={100} className=" md:min-w-[2.5rem]  min-h-full"  draggable={false} />
           }
         </Link>
         { isAboveSemiLargeScreens ?
