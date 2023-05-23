@@ -14,14 +14,14 @@ export default async function handler(
     
     const {
         comment,
-        productId
+        id
     } = req.body
     
     
     if(!session || !session.user.id){
         return res.status(501).json({message:'Unauthorized'})
     }
-    if(!comment || !productId){
+    if(!comment || !id){
         return res.status(204).json({message:'All fields are required'})
     }
     try{
@@ -29,7 +29,7 @@ export default async function handler(
     const createComment = await prisma.comments.create({
         data:{
             comment,
-            productId,
+            productId:id,
             userId:session.user.id
         },
         include:{
