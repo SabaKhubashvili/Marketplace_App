@@ -189,7 +189,7 @@ export const FeedComponent = ({
                     <Dots/>
                 </div>
 
-                <AnimateDropdown isOpen={dropdown} body={dropdownBody}/>
+                <AnimateDropdown isTop isRight isOpen={dropdown} body={dropdownBody}/>
             </div>
         </div>
         <CommentsSection showComments={showComments} productId={id} Comments={PostComments} isFeed />
