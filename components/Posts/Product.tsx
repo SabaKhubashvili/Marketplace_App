@@ -137,7 +137,7 @@ export const Product = ({
 
     const handleCopy = async () => {
         try {
-          await navigator.clipboard.writeText(`${ogUrl}${id}`);
+          await navigator.clipboard.writeText(`${ogUrl}product/${id}`);
           toast.success('Link Copied')
         } catch (error) {
           console.error('Failed to copy link');

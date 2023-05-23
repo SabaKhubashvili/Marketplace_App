@@ -55,18 +55,18 @@ export default function Home() {
           <meta property='og:description' content='See our latest posts here'  />
         </Head>
 
-        <main className='flex justify-between w-full h-full lg:pt-0 pt-[100px] '>
+        <main className='flex justify-between w-full h-full lg:pt-0  '>
+            <div className='mt-[43px] lg:overflow-y-scroll w-full  min-h-[80%] lg:h-[96vh]  lg:scrollbar-hide lg:pr-[10px]   rounded-sm'>
           <div className='w-full h-full  md:px-[23px] px-[10px] pt-[44px] xl:basis-2/3'>
 
-            <h1 className='text-[32px]  font-semibold text-[#2A2A2A] dark:text-[#FFF]'>Explore</h1>
+            <h1 className='text-[32px] pb-[10px]  font-semibold text-[#2A2A2A] dark:text-[#FFF]'>Explore</h1>
             {
               !isAboveSemiLargeScreens && hasMounted  &&
-              <div className='pt-[20px] flex flex-col gap-[14px]'>
+              <div className='pt-[20px] flex flex-col gap-[14px] pb-[20px]'>
                 <SecondaryTextInput label='Search by item' icon/>
                 <TagsSlider/>
               </div>
             }
-            <div className='mt-[43px] lg:overflow-y-scroll   min-h-[80%] lg:h-[90vh]  lg:scrollbar-hide lg:pr-[10px]   rounded-sm'>
               <FeedCreatePost setShowFilteredPosts={setShowFilteredPosts} showFilteredPosts={showFilteredPosts} isAboveSmallScreens={isAboveSmallScreens} />
                 {
                 isProductsLoading ?

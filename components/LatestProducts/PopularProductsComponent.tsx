@@ -43,7 +43,7 @@ export const PopularProductsComponent = ({id,title,author,image,createdAt,follow
                 </div>
             </div>
             <div className='flex gap-[14px] items-center'>
-                <h3 className='text-third'>{differenceInMinutes >= 60 ? differenceInMinutes/60 + ' Hours ago' : differenceInMinutes + ' Minutes ago'}</h3>
+                <h3 className='text-third'>{differenceInMinutes >= 60 ? (differenceInMinutes/60).toFixed(1) + ' Hours ago' : differenceInMinutes + ' Minutes ago'}</h3>
                 <div className='w-1 h-1 rounded-full bg-[#D9D9D9]' />
                 <Link href={`/product/${id}`} className='text-third'>View Product</Link>
             </div>

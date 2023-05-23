@@ -85,8 +85,8 @@ export const Navbar = ({menu,setMenu}:Props) => {
 
       <motion.nav 
       className={`${menu ? 'xl:col-span-2 lg:col-span-3' : 'xl:col-span-1 lg:col-span-2  '} 
-      lg:pt-[38px] flex lg:static fixed   lg:flex-col items-center lg:justify-normal justify-between z-[89]    
-      lg:gap-[118px] dark:bg-[#212121]  
+      lg:pt-[38px] flex lg:static fixed   lg:flex-col items-center lg:justify-start justify-between z-[89]    
+      xl:gap-[120px] lg:gap-[49px] dark:bg-[#212121] lg:bg-transparent bg-white lg:py-0 py-3 
       lg:h-full lg:min-h-[100vh] lg:col-start-auto col-start-1   w-full col-span-12 lg:px-0 sm:px-[23px] px-[10px]`} >
         
         {
