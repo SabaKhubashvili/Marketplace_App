@@ -24,7 +24,11 @@ export default async function handler(
             },
             include:{
                 publisher:true,
-                comments:true,
+                comments:{
+                    include:{
+                        author:true
+                    }
+                },
                 productLikes:true,
                 tags:{
                     select:{

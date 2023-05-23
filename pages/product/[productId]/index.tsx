@@ -17,7 +17,7 @@ const index = ({
     tags
 }:ProductInterface) => {
 
-
+    
   return (
     <React.Fragment>
 
@@ -42,7 +42,7 @@ const index = ({
                 </div>
                 <div className="basis-1/2 flex flex-col gap-[20px]" >
                     <h1 className='font-bold text-4xl'>{title}</h1>
-                    <p className='flex items-center gap-[10px]  '>
+                    <p className='flex items-center gap-[10px]  '>   
                         {publisher.image ?
                             <img src={publisher.image} className='cursor-pointer rounded-full' alt="" />
                             :
