@@ -68,7 +68,7 @@ export const FeedCreatePost = ({isAboveSmallScreens,setShowFilteredPosts,showFil
 
             <div className='h-[10rem] w-[10rem] flex flex-col gap-[6px] overflow-y-scroll text-left '>
                 { !isTagsLoading ?
-                    tags.map((tag:Tag)=>(
+                    tags?.map((tag:Tag)=>(
                         <p key={tag.id} className='flex justify-between'>
                             {tag.name}
 

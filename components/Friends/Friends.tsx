@@ -22,7 +22,7 @@ export const Friends = () => {
           <LoadingIcon/>
         </div>
         :
-          users.map((user:UserInterface)=>(
+          users?.map((user:UserInterface)=>(
             <FriendComponent key={user.id} id={user.id} name={user.name} image={user.image} isVerified={user.isVerified} followers={user.Follower} />
           ))
         }

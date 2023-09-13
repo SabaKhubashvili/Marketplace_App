@@ -28,13 +28,19 @@ export default function App({
   return(
     <SessionProvider session={pageProps.session}>
       <QueryClientProvider client={queryClient}>
-
         <ThemeProvider enableSystem={true} attribute='class'>
           <Toaster/>
           <Container>
             <LoginModal />
             <RegisterModal/>   
                 
+                <div className='w-full h-full fixed inset-0 bg-[#0000009b]  z-[999]'>
+                  <div className='flex justify-center items-center text-center text-white w-full h-full flex-col gap-[10px]'>
+                      <h1 className='text-bold text-[45px]'>Database got shutted down</h1>
+                      <p className='text-[20px]'>Run on local to test website</p>
+                  </div>
+                </div>
+
             <div className='grid grid-cols-12  gap-[22px] font-Poppins'>
 
               <Navbar menu={menu} setMenu={setMenu}/>

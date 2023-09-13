@@ -59,7 +59,7 @@ export const CommentsSection = ({showComments,productId,Comments,isFeed,isBig}:P
                 className='flex flex-col gap-[24px]'
             >
                {
-                slicedComment.map((comment:CommentsInterface,index:number)=>(
+                slicedComment?.map((comment:CommentsInterface,index:number)=>(
                     <CommentComponent key={comment.id} index={index} comment={comment.comment} publisher={comment.author} />
                 ))
                }

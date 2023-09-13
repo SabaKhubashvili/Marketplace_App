@@ -22,7 +22,7 @@ export const TrendingProducts = () => {
                 Popular  Products
                 </h2>
                 <div className='flex flex-col gap-[26px] overflow-y-scroll h-[64vh] rounded-sm'>
-                  { products.map((product:ProductInterface)=>(
+                  { products?.map((product:ProductInterface)=>(
                       <PopularProductsComponent
                       key={product.id}
                       id={product.id}

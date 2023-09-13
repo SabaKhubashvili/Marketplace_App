@@ -165,7 +165,7 @@ export const Product = ({
 
                     <ul className='flex gap-[10px]'>
                         {
-                            tags.map((singletag:any)=>(
+                            tags?.map((singletag:any)=>(
                                 <li className='text-secondary' key={singletag.tag.id}>
                                 {singletag.tag.name},
                              </li>   

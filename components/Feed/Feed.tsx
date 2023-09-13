@@ -48,11 +48,11 @@ export const Feed = () => {
         </div>
         :
         showFilteredPosts && filteredPosts ? 
-          filteredPosts.map((post:PostInterface)=>(
+          filteredPosts?.map((post:PostInterface)=>(
             <FeedComponent key={post.id} {...post}/>
           ))
             :
-          data.map((post:PostInterface)=>(
+          data?.map((post:PostInterface)=>(
               <FeedComponent key={post.id} {...post}/>
             ))
        }

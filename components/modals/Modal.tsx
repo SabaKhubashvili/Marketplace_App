@@ -40,6 +40,7 @@ export const Modal = ({
         }
         onClose()
     },[disabled,onClose])
+    
     const handleSubmit = useCallback(()=>{
         if(disabled){
             return null

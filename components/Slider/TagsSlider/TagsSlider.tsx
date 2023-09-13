@@ -63,7 +63,7 @@ export const TagsSlider = () => {
       >
           { !isLoading &&
 
-                data.map((language:Tag)=>(
+                data?.map((language:Tag)=>(
                   <SwiperSlide key={language.id} className='!w-20'>
                     <TagsSliderComponent isActive={tag === language.name} label={language.name} onClick={(value)=>onChange(value)} />
                   </SwiperSlide>

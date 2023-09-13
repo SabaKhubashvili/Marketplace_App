@@ -1,9 +1,6 @@
-import React, { useCallback, useEffect } from 'react'
+import React, { useCallback } from 'react'
 import { CldUploadWidget } from 'next-cloudinary'
-import Image from 'next/image'
-import { TbPhotoPlus } from "react-icons/tb"
 import { ImageIcon } from '@/public/Svg/Icons'
-import { FieldErrors, FieldValues, UseFormRegister } from 'react-hook-form'
 
 declare global {
     var cloudinary:any

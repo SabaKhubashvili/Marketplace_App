@@ -36,7 +36,7 @@ const Index = () => {
 
               { Products.length > 0
               ?
-                Products.map((product:any)=>(
+                Products?.map((product:any)=>(
                   <Product key={product.product.id} {...product.product as ProductInterface} />
                   ))
                   :

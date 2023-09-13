@@ -78,13 +78,13 @@ export default function Home() {
                  {
                   filteredProducts && showFilteredPosts ?
 
-                  filteredProducts.map((product:ProductInterface)=>(
+                  filteredProducts?.map((product:ProductInterface)=>(
                     <React.Fragment key={product.id}>
                       <Product  {...product} />
                     </React.Fragment>
                    ))
                   :
-                  Products.map((product:ProductInterface)=>(
+                  Products?.map((product:ProductInterface)=>(
                   <React.Fragment key={product.id}>
                     <Product  {...product} />
                   </React.Fragment>
